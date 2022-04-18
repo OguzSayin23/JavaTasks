@@ -5,17 +5,20 @@ public class Palindrome {
     //and returns true if the string is
     //palindrome.
     public static void main(String[] args) {
-        isPalindrome("topspot");
-        isPalindrome("tops");
+        System.out.println(isPalindrome("topsospoT"));
+        System.out.println(isPalindrome("topos"));
     }
 
-    public static void isPalindrome(String str){
+    public static boolean isPalindrome(String str){
         boolean flag = false;
-        for (int i = 0, j = str.length()-1; i < str.length(); i++, j--) {
-            if(str.charAt(i)==str.charAt(j)){
-                flag = true;
-            }
+        String reverse = "";
+        for (int i = str.length()-1 ; i >= 0 ; i--) {
+           reverse+=str.charAt(i);
         }
-        System.out.println(flag);
+        if (reverse.equalsIgnoreCase(str)) {
+            flag=true;
+        }
+
+        return flag;
     }
 }
